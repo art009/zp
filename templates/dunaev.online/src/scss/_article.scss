@@ -1,0 +1,115 @@
+.articles{
+	p.article-link {
+		margin: 0;
+		padding: 16px 0 0 0;
+		a {
+			text-decoration: underline;
+			:hover {
+				text-decoration: none;
+			}
+		}
+		@media (max-width: 576px) {
+			display: none;
+		}
+	}
+
+	.wrap-article {
+		.actions-{
+			&title {
+				margin-top: 16px;
+				>a {
+					font-weight: bold;
+					font-size: 20px;
+					height: 80px;
+					color: $color_black;
+					@media (max-width: 576px) {
+						height: auto;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		.article-{
+			&img {
+				width: 100%;
+				max-height: 150px;
+				@media (max-width: 576px) {
+					max-height: none;
+				}
+			}
+			&title {
+				margin-top: 16px;
+				>a {
+					font-weight: bold;
+					font-size: 20px;
+					height: 80px;
+					color: $color_black;
+					@media (max-width: 576px) {
+						height: auto;
+						font-size: 16px;
+					}
+				}
+			}
+			&description {
+				font-size: 14px;
+				//height: 150px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				@media (max-width: 576px) {
+					height: auto;
+				}
+			}
+			&date {
+				font-size: 12px;
+				>a {
+					color: $color_black;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	.actions{
+		&-wrap {
+
+		}
+		&-slider {
+			.action-img {
+				width: 100%;
+			}
+			button.slick-arrow {
+				display: none;
+				background: none;
+				width: 5px;
+			}
+
+			.slick-dots li {
+				width: 10px;
+				height: 10px;
+				button {
+					width: 10px;
+					height: 10px;
+					&::before {
+						color: transparent;
+						opacity: 1;
+						font-size: 14px;
+						border: 1px solid $color_purple;
+						border-radius: 50%;
+						width: 10px;
+						height: 10px;
+					}
+				}
+				&.slick-active{
+					button {
+						background-color: transparent;
+						&::before {
+							background-color: $color_purple;
+						}
+					}
+				}
+			}
+		}
+	}
+}

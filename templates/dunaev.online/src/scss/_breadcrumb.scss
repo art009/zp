@@ -1,0 +1,32 @@
+.breadcrumb {
+	background-color: transparent;
+	li {
+		&::after {
+			content: "/";
+			padding: 0 10px;
+		}
+
+		&:last-child {
+			&::after {
+				content: "";
+			}
+		}
+
+		@media (max-width: 576px) {
+			display: none;
+			&:nth-last-child(2) {
+				display: block;
+			}
+			&::before {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: "\f053";
+				margin-right: 10px;
+			}
+			&::after {
+				content: " ";
+				padding: 0 10px;
+			}
+		}
+	}
+}

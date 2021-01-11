@@ -1,0 +1,52 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+# сжатие text, html, javascript, css, xml:
+<ifModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+# редирект с / без /
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+
+# редирект на https
+RewriteCond %{HTTP:PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
+
+# редирект на WWW
+RewriteCond %{HTTP_HOST} ^z-p\.ru$ [NC]
+RewriteRule ^(.*)$ https://www.z-p.ru/$1 [R=301,L]
+
+## пропустим все картинки
+RewriteCond %{REQUEST_URI} !\.(gif|jpg|png|js|css)$
+
+# Если файл или каталог не существует, идём к /web/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php
+
+
+#redirect 301 /gynaecology.htm /operativnaya-ginekologiya.htm
+#redirect 301 /obstetrics.htm /mnogoprofilnyj-medicinskij-centr.htm
+#redirect 301 /gynaecology-surgical.htm /operativnaya-ginekologiya.htm
+
+Redirect 301 	/mnogoprofilnyj-medicinskij-centr.htm	 /mmz/mnogoprofilnyj-medicinskij-centr.htm
+Redirect 301 	/konservativnaya-ginekologiya.htm	 /mmz/konservativnaya-ginekologiya.htm
+Redirect 301	/operativnaya-ginekologiya.htm	 /mmz/operativnaya-ginekologiya.htm
+Redirect 301	/podgotovka-k-beremennosti.htm	 /mmz/podgotovka-k-beremennosti.htm
+Redirect 301	/otdelenie-funkcionalnoj-diagnostiki.htm	 /mmz/otdelenie-funkcionalnoj-diagnostiki.htm
+Redirect 301	/sobstvennaya-klinicheskaya-laboratoriya.htm	 /mmz/sobstvennaya-klinicheskaya-laboratoriya.htm
+Redirect 301	/mamina-shkola.htm	 /mmz/mamina-shkola.htm
+Redirect 301	/sluzhba-grudnogo-vskarmlivaniya.htm	 /mmz/sluzhba-grudnogo-vskarmlivaniya.htm
+Redirect 301	/administraciya-mc.htm	 /mmz/administraciya-mc.htm
+Redirect 301	/ekspert-mc-zdorovoe-pokolenie.htm	 /mmz/ekspert-mc-zdorovoe-pokolenie.htm
+Redirect 301	/akushery-ginekologi.htm	 /mmz/akushery-ginekologi.htm
+Redirect 301	/uzkie-specialisty.htm	 /mmz/uzkie-specialisty.htm
+Redirect 301	/programma-dorodovogo-nablyudeniya.htm	 /mmz/programma-dorodovogo-nablyudeniya.htm
+Redirect 301	/programma-vedeniya-beremennosti-bazovaya.htm	 /mmz/programma-vedeniya-beremennosti-bazovaya.htm
+Redirect 301	/programma-nablyudeniya-za-beremennoj-posle-eko-i-pri-mnogoplodnoj-beremennosti.htm	 /mmz/programma-nablyudeniya-za-beremennoj-posle-eko-i-pri-mnogoplodnoj-beremennosti.htm
+Redirect 301	/programma-kompleksnogo-nablyudeniya-pri-oslozhnennoj-beremennosti.htm	 /mmz/programma-kompleksnogo-nablyudeniya-pri-oslozhnennoj-beremennosti.htm
+Redirect 301	/premium-programma-kompleksnogo-nablyudeniya-za-beremennoj.htm	 /mmz/premium-programma-kompleksnogo-nablyudeniya-za-beremennoj.htm
+Redirect 301	/programma-premium-nipt-kompleksnogo-nablyudeniya-za-beremennoj.htm	 /mmz/programma-premium-nipt-kompleksnogo-nablyudeniya-za-beremennoj.htm
+

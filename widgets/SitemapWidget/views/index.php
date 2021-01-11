@@ -1,0 +1,1 @@
+<?=\yii\widgets\Menu::widget($params);?>

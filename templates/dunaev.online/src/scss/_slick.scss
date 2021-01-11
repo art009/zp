@@ -1,0 +1,57 @@
+/*-----------------  SLICK SLIDER  -----------------------*/
+.slick-prev::before,
+.slick-next::before {
+	content: none;
+}
+.slick-prev,
+.slick-next,
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 45px;
+	height: 90px;
+	background-size: cover;
+	content: none;
+	z-index: 2;
+}
+.slick-prev {
+	background-image: url("/img/arrow_prev.png");
+	left: 0;
+}
+.slick-next {
+	background-image: url("/img/arrow_next.png");
+	right: 0;
+}
+@media only screen and (max-width: 600px) {
+	.slick-prev {
+		display: none !important;
+	}
+	.slick-next {
+		display: none !important;
+	}
+}
+.slick-prev:hover, .slick-prev:focus {
+	background-image: url("/img/arrow_prev.png");
+	opacity: .55;
+}
+.slick-next:hover, .slick-next:focus {
+	background-image: url("/img/arrow_next.png");
+	opacity: .55;
+}
+.slick-dots {
+	bottom: 10px;
+}
+.slick-dots li.slick-active button::before {
+	color: #009bd2;
+}
+.slick-dots li button::before {
+	color: #fff;
+	opacity: 1;
+	font-size: 14px;
+}
+.slick-slide img {
+	width: 100%;
+}

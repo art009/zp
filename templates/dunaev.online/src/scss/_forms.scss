@@ -1,0 +1,20 @@
+.form-control {
+	border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+}
+textarea {
+	resize: none;
+}
+.btn-feedback {
+	color: $color_white;
+	background-color: $color_blue;
+	border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	padding: .375rem 4rem;
+	width: 100%;
+	:hover {
+		color: #fff;
+	}
+}

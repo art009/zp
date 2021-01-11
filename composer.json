@@ -1,0 +1,90 @@
+{
+    "name": "artavd/z-p",
+    "description": "z-p.ru site",
+    "keywords": ["z-p"],
+    "homepage": "https://z-p.ru/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "yii-dream-team/yii2-jstree": "*",
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "mihaildev/yii2-ckeditor": "*",
+        "2amigos/yii2-switch-widget": "~1.0",
+        "2amigos/yii2-file-upload-widget": "~1.0",
+        "budyaga/yii2-users": "*",
+        "yii2tech/csv-grid": "*",
+        "kartik-v/yii2-widget-select2": "*",
+        "bower-asset/jquery-sortable": "*",
+        "bower-asset/bootstrap4": "~4.0",
+        "bower-asset/slick-carousel": "@stable",
+        "bower-asset/typeahead.js": "~0.11.0",
+        "bower-asset/urlify": "*",
+        "bower-asset/fancybox": ">=2.1.5",
+        "bower-asset/nivo-slider": "*",
+        "bower-asset/noty": "2.3.4",
+        "bower-asset/animate.css": "3.2.3"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3",
+        "veks/button-visually-impaired-javascript": "~2"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "yii\\composer\\Installer::postInstall"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ]
+        },
+        "yii\\composer\\Installer::postInstall": {
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+
+        {
+            "type":"package",
+            "package":{
+                "name":"veks/button-visually-impaired-javascript",
+                "version":"2.0",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/veks/button-visually-impaired-javascript",
+                    "reference":"master"
+                }
+            }
+        }
+    ]
+}

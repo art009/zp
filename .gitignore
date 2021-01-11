@@ -1,0 +1,51 @@
+gi# phpstorm project files
+.idea
+www/.htaccess
+www/index.php
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+/.well-known
+www/data
+www/image
+
+# конфигурация БД
+config/db.php
+config/params.php
+config/web.php
+public_html/index.php
+web/index.php
+
+tests/_output/*
+tests/_support/_generated
+/www/image/
+/www/data/
+/www/uploads/
+/www/data/
+migrations-export/*
+
+# служебные сервера
+logs
+stats

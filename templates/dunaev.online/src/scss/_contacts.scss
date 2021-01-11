@@ -1,0 +1,15 @@
+.contacts {
+	.block-{
+		&title {
+			font-size: 20px;
+			font-weight: bold;
+			color: $color_black;
+			@media (max-width: 576px) {
+				font-size: 16px;
+			}
+		}
+		&content {
+
+		}
+	}
+}

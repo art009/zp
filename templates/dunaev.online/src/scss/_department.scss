@@ -1,0 +1,61 @@
+section.department {
+	.wrap-depart {
+		position:relative;
+		padding: 0;
+		color: $color_white;
+		height: 150px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-color: $bg_color_green;
+		&:before {
+			content: "";
+			position:absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.2);
+		}
+		.content {
+			position:absolute; /* добавили */
+			bottom: 0;
+			padding: 16px 10px 0 10px;
+			width: 100%;
+		}
+		.phone {
+			font-size: 18px;
+		}
+		a {
+			color: $color_white;
+			text-decoration: underline;
+			font-size: 18px;
+			//text-shadow: 1px 2px 2px #000000;
+			:hover {
+				text-decoration: none;
+			}
+		}
+		.bottom-block {
+			position:absolute; /* добавили */
+			bottom: 10px;
+			width: 100%;
+			margin-left: -10px;
+			@media (max-width: 576px) {
+				display: none;
+			}
+		}
+		i.fa-chevron-down {
+			color: $color_white;
+			font-size: 30px;
+		}
+	}
+	.title-depart {
+		color: $color_default;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 1em;
+	}
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+/*fonts*/
+//@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap&subset=cyrillic';
+//@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900&display=swap&subset=cyrillic';
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,700,900&display=swap&subset=cyrillic');
+
+$fonts_default: 'Exo 2', sans-serif, Arial;
+$default_font_size: 14px;
+
+/*backgroud colors*/
+$bg_color_default: #FFFFFF;
+$bg_color_blue: #F5FCFE;
+$bg_color_grey: #f4f5f5;
+$bg_color_orange: #feeeea;
+$bg_color_green: #cee8ca;
+$bg_color_red: #b869a0;
+$bg_color_dark_blue: #92c7e8;
+$bg_color_dark_grey: #d9dadc;
+
+$color_default: #666;
+$color_white: #FFF;
+$color_black: #000;
+$color_blue: #016EB3;
+$color_purple: #1b198a;
+$color_orange: #f55c34;
+
+
+$border_gray: #ebeced;

@@ -1,0 +1,33 @@
+.branchs {
+	margin-bottom: 40px;
+	p.h2 {
+		margin: 0;
+	}
+	.branch-{
+		&map {
+			img {
+				width: 100%;
+			}
+			@media (max-width: 576px) {
+				margin-top: 20px;
+			}
+		}
+		&name {
+			margin: 10px 0;
+			font-size: 20px;
+			font-weight: bold;
+			@media (max-width: 576px) {
+				font-size: 16px;
+			}
+		}
+		&phone {
+			font-size: 16px;
+			@media (max-width: 576px) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+	#vk_widget, #vk_groups {
+		width: 100%;
+	}
+}

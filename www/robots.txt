@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /js
+Disallow: /site/contact-form
+Disallow: /site/add-reviews
+Disallow: /assets/*
+Disallow: /site/work-time
+
+host: www.z-p.ru
+
