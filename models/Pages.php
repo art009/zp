@@ -74,8 +74,6 @@ class Pages extends \yii\db\ActiveRecord
             $attribute => $this->$attribute,
             $targetAttribute => $this->$targetAttribute,
         ])->one();
-//        if ($this->url == 'cont-1-2-4')
-//        {var_dump( ($pages && $this->isNewRecord) );exit;}
         if ($pages && $this->isNewRecord) {
             $this->addError($attribute, 'Url не уникален, измениете URL.');
         }
@@ -210,7 +208,7 @@ class Pages extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Redirect::class,[
             'page_id' => 'id',
-        ])->where(['model_name' => 'Pages',]);
+        ])->andOnCondition(['model_name' => 'Pages',]);
     }
     // ссылка на страницу
     public function getUrlPage()
@@ -253,7 +251,7 @@ class Pages extends \yii\db\ActiveRecord
     // страница сотрудник
     public function getWorker()
     {
-        return $this->hasOne(Staff::className(), ['page_id' => 'id']);
+        return $this->hasOne(Staff::class, ['page_id' => 'id']);
     }
     // результат поиска контента
     public function getSearchContent($search)
