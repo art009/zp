@@ -58,11 +58,11 @@ if ($goal)
     </div>
 
 <?= $form->field($model, 'reCaptcha')->widget(
-    GoogleReCaptcha::className()
+    GoogleReCaptcha::class
 )->label(false) ?>
 
 <?=Html::activeHiddenInput($model,'depart',[
-		'value' => Yii::$app->params['depart'],
+		'value' => !empty(\Yii::$app->params['depart'])?\Yii::$app->params['depart']:null,
 ])?>
 
     <?= Html::button('Отправить', $btn_params) ?>

@@ -60,7 +60,7 @@ class DepartsUrlRule implements UrlRuleInterface
 		if ($route === 'site/page') {
 			if (isset($params['depart'])) {
 				if ( is_int($params['depart']) )
-					$url .= Yii::$app->params['depart_slug'].'/';
+					$url .= !empty(Yii::$app->params['depart_slug'])?Yii::$app->params['depart_slug'].'/':'/';
 				else
 					$url .= $params['depart'].'/';
 			}
@@ -106,7 +106,7 @@ class DepartsUrlRule implements UrlRuleInterface
 				$default_depart = Depart::defaultDepart();
 				$route = 'site/page';
 				$params['url'] = $page[1];
-				$params['depart'] = $default_depart->id;//Yii::$app->params['depart'];
+				$params['depart'] = $default_depart->id;
 				return [$route,$params];
 			}
 		}
@@ -115,16 +115,18 @@ class DepartsUrlRule implements UrlRuleInterface
 		if ( in_array($path_array[0],$array_static) ) {
 			$route = 'site/'.$path_array[0];
 			$params['url'] = $path_array[1];
-			$params['depart'] = Yii::$app->params['depart'];
+			$params['depart'] = !empty(Yii::$app->params['depart'])?Yii::$app->params['depart']:null;
 			return [$route,$params];
 		}
-		if ($path_array[0] == Yii::$app->params['depart_slug']) {
+		if ( !empty(Yii::$app->params['depart_slug'])
+			&& $path_array[0] == Yii::$app->params['depart_slug']
+		) {
 //			var_dump($path_array[1]);
 //			var_dump(in_array($path_array[1],['news','article','staff','faq-views']));exit;
 			if (in_array($path_array[1],$array_static)) {
 				$route = 'site/'.$path_array[1];
 				$params['url'] = $path_array[2];
-				$params['depart'] = Yii::$app->params['depart'];
+				$params['depart'] = !empty(Yii::$app->params['depart'])?Yii::$app->params['depart']:null;
 				return [$route,$params];
 			}
 		}

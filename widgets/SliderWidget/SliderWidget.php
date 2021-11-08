@@ -15,7 +15,7 @@ class SliderWidget extends Widget
 
     public function run()
     {
-    	$depart = \Yii::$app->params['depart'];
+    	$depart = !empty(\Yii::$app->params['depart'])?\Yii::$app->params['depart']:null;
 
         $slides = Sliders::find()
 	        ->where([
