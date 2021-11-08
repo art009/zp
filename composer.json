@@ -28,7 +28,7 @@
         "bower-asset/fancybox": ">=2.1.5",
         "bower-asset/nivo-slider": "*",
         "bower-asset/noty": "2.3.4",
-        "bower-asset/animate.css": "3.2.3"
+        "veks/button-visually-impaired-javascript": "1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -37,8 +37,7 @@
 
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1",
-        "codeception/specify": "~0.4.3",
-        "veks/button-visually-impaired-javascript": "~2"
+        "codeception/specify": "~0.4.3"
     },
     "config": {
         "process-timeout": 1800
@@ -73,12 +72,11 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         },
-
         {
             "type":"package",
             "package":{
                 "name":"veks/button-visually-impaired-javascript",
-                "version":"2.0",
+                "version":"1.0",
                 "source":{
                     "type":"git",
                     "url":"https://github.com/veks/button-visually-impaired-javascript",
