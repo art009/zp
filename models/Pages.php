@@ -109,9 +109,9 @@ class Pages extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
             [
-                'class' => BlameableBehavior::className(),
+                'class' => BlameableBehavior::class,
                 'value' => 1,
                 'createdByAttribute' => 'created_by',
                 'updatedByAttribute' => 'updated_by',
@@ -188,12 +188,7 @@ class Pages extends \yii\db\ActiveRecord
 
     public function getExtPage()
     {
-        /*if (in_array($this->layout,[
-            PagesHelper::LAYOUT_NEWS,
-            PagesHelper::LAYOUT_ARTICLE,
-            PagesHelper::LAYOUT_ACTION,
-        ]))*/
-            return $this->hasOne(ExtPage::className(),['page_id' => 'id']);
+        return $this->hasOne(ExtPage::class,['page_id' => 'id']);
     }
 
     public static function listPages($depart = null) {
@@ -201,17 +196,19 @@ class Pages extends \yii\db\ActiveRecord
 		    $deafault_depart = Depart::defaultDepart();
 		    $depart = $deafault_depart->id;
 	    }
-        return ArrayHelper::map(
-        	self::find()
-		        ->where(['depart' => $depart])
-		        ->joinWith('extPage')
-		        ->orderBy('title_page')
-		        ->all(),'id','title_page');
+
+    	return self::find()
+		    ->select('title_page')
+		    ->indexBy('id')
+		    ->where(['depart' => $depart])
+		    ->joinWith('extPage')
+		    ->orderBy('title_page')
+		    ->column();
     }
 
     public function getRedirect()
     {
-        return $this->hasMany(Redirect::className(),[
+        return $this->hasMany(Redirect::class,[
             'page_id' => 'id',
         ])->where(['model_name' => 'Pages',]);
     }
@@ -273,14 +270,13 @@ class Pages extends \yii\db\ActiveRecord
 
         $char_count = 200 + strlen($search);
         $result = mb_substr($clear_tags,$str_from,$char_count);
-//        return $str_from;
         return $prefix . str_replace($search,'<b>' . $search . '</b>',$result) . '...';
     }
 
     public function getDepart()
     {
     	return $this
-		    ->hasOne(Depart::className(),['id'=>'depart'])
+		    ->hasOne(Depart::class,['id'=>'depart'])
 		    ->via('extPage');
     }
 
