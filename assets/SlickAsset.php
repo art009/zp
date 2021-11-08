@@ -2,6 +2,7 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
 class SlickAsset extends AssetBundle
 {
@@ -14,6 +15,6 @@ class SlickAsset extends AssetBundle
         'slick.min.js',
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
+    	JqueryAsset::class,
     ];
 }

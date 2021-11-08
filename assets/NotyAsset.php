@@ -2,6 +2,7 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
 class NotyAsset extends AssetBundle{
 
@@ -13,6 +14,6 @@ class NotyAsset extends AssetBundle{
     }
 
     public $depends =[
-        'yii\web\JqueryAsset'
+	    JqueryAsset::class
     ];
 }

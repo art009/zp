@@ -3,6 +3,11 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 use yii\web\View;
+use app\assets\FontAwesomeAsset;
+use app\assets\BootstrapAsset;
+use app\assets\SlickAsset;
+use app\assets\FancyBoxAsset;
+use app\assets\BviAsset;
 
 /**
  * Main application asset bundle.
@@ -30,13 +35,10 @@ class DunaevOnlineAsset extends AssetBundle
 	];
 
 	public $depends = [
-		'app\assets\FontAwesomeAsset',
-		'app\assets\BootstrapAsset',
-		'app\assets\SlickAsset',
-		'app\assets\FancyBoxAsset',
-		'app\assets\BviAsset',
-//        'app\assets\NotyAsset',
-//        'app\assets\AnimateAsset',
-//        'yii\widgets\MaskedInputAsset',
+		FontAwesomeAsset::class,
+		BootstrapAsset::class,
+		SlickAsset::class,
+		FancyBoxAsset::class,
+		BviAsset::class,
 	];
 }

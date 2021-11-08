@@ -9,6 +9,9 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 use yii\web\View;
+use rmrevin\yii\fontawesome\AssetBundle as FontawesomeAssetBundle;
+use app\assets\BootstrapAsset;
+use app\assets\FancyBoxAsset;
 
 /**
  * Main application asset bundle.
@@ -33,8 +36,8 @@ class AppAsset extends AssetBundle
     ];
 
     public $depends = [
-        'rmrevin\yii\fontawesome\AssetBundle',
-        'app\assets\BootstrapAsset',
-        'app\assets\FancyBoxAsset',
+	    FontawesomeAssetBundle::class,
+        BootstrapAsset::class,
+        FancyBoxAsset::class,
     ];
 }

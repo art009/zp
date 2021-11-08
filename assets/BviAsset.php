@@ -4,6 +4,7 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 use yii\web\View;
+use yii\web\JqueryAsset;
 
 class BviAsset extends AssetBundle
 {
@@ -22,6 +23,6 @@ class BviAsset extends AssetBundle
 	];
 
 	public $depends = [
-		'yii\web\JqueryAsset',
+		JqueryAsset::class,
 	];
 }

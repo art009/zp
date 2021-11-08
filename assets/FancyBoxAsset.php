@@ -2,6 +2,7 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\JqueryAsset;
 
 class FancyBoxAsset extends AssetBundle{
 
@@ -14,6 +15,6 @@ class FancyBoxAsset extends AssetBundle{
     }
 
     public $depends =[
-        'yii\web\JqueryAsset'
+	    JqueryAsset::class
     ];
 }
