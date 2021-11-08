@@ -25,20 +25,16 @@ class AppAsset extends AssetBundle
     public $jsOptions = ['position' => View::POS_END];
 
     public $css = [
-        'css/style.css?v=002',
+        'css/style.css',
     ];
 
     public $js = [
-        'js/script.js?v=002'
+        'js/script.js'
     ];
 
     public $depends = [
         'rmrevin\yii\fontawesome\AssetBundle',
         'app\assets\BootstrapAsset',
-//        'app\assets\SlickAsset',
         'app\assets\FancyBoxAsset',
-//        'app\assets\NotyAsset',
-//        'app\assets\AnimateAsset',
-//        'yii\widgets\MaskedInputAsset',
     ];
 }
